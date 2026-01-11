@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @EnvironmentObject private var appState: AppState
-    @StateObject private var oauthService = GoogleOAuthService()
+    @State private var oauthService = GoogleOAuthService()
     @State private var isAuthorizing = false
     @State private var errorMessage: String?
 
