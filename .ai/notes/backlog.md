@@ -49,6 +49,7 @@
       - [ ] Creation sets up correct Drive folders/sheet/tabs
     - **Source:** ui-flow-spec.md 1.2-1.3, google-drive-folder-architecture.md
     - **Plan:** `.ai/thoughts/plans/2026-01-11-US-01-02-dataset-discovery.md`
+    - **Notes:** Current implementation simulates dataset discovery/creation locally. Drive/Sheets creation is planned with sync/cloud integration (see E-07).
     - **Tasks:**
       - [ ] T-01.02.01 Auto-detect dataset/folder
       - [ ] T-01.02.02 Show dataset summary/selection
@@ -272,4 +273,3 @@
 ---
 
 **End of backlog. Every epic/story/task references its source in ai/notes/ for traceability.**
-

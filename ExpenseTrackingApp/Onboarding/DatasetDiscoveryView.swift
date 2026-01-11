@@ -14,6 +14,7 @@ struct DatasetDiscoveryView: View {
     @State private var isCreating = false
     @State private var errorMessage: String?
     @State private var discoveryState: DiscoveryState = .searching
+    @State private var showReplaceAlert = false
 
     private let creationSteps: [String] = [
         "Create Drive folders",
@@ -46,6 +47,14 @@ struct DatasetDiscoveryView: View {
         }
         .task {
             await discoverDataset()
+        }
+        .alert("Replace existing dataset?", isPresented: $showReplaceAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Replace", role: .destructive) {
+                Task { await createDataset() }
+            }
+        } message: {
+            Text("Creating a new dataset will replace the current dataset selection stored on this device.")
         }
     }
 
@@ -84,7 +93,7 @@ struct DatasetDiscoveryView: View {
             .buttonStyle(.borderedProminent)
 
             Button("Create New Dataset Instead") {
-                Task { await createDataset() }
+                showReplaceAlert = true
             }
             .buttonStyle(.bordered)
             .disabled(isCreating)
