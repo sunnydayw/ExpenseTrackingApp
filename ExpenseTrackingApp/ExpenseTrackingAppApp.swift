@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct ExpenseTrackingAppApp: App {
+    @StateObject private var appState = AppState()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,7 +27,8 @@ struct ExpenseTrackingAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(appState)
         }
         .modelContainer(sharedModelContainer)
     }
