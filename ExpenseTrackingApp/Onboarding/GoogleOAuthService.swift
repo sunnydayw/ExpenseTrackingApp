@@ -25,8 +25,8 @@ final class GoogleOAuthService: NSObject {
         }
 
         static let `default` = Configuration(
-            clientID: "YOUR_GOOGLE_CLIENT_ID",
-            redirectURI: "com.googleusercontent.apps.YOUR_GOOGLE_CLIENT_ID:/oauthredirect",
+            clientID: "11485249792-4q332edqmnppdrces1a8kmsjl3hvqmf6.apps.googleusercontent.com",
+            redirectURI: "com.googleusercontent.apps.11485249792-4q332edqmnppdrces1a8kmsjl3hvqmf6:/oauthredirect",
             scopes: [
                 "https://www.googleapis.com/auth/drive.file",
                 "https://www.googleapis.com/auth/spreadsheets"
