@@ -7,7 +7,12 @@
 
 import AuthenticationServices
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#endif
+#if canImport(AppKit)
+import AppKit
+#endif
 
 final class GoogleOAuthService: NSObject {
     struct Configuration {
@@ -129,8 +134,27 @@ final class GoogleOAuthService: NSObject {
 
 extension GoogleOAuthService: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first { $0.activationState == .foregroundActive } as? UIWindowScene
-        return windowScene?.keyWindow ?? ASPresentationAnchor()
+        #if canImport(UIKit)
+        // iOS/tvOS: try to find the active key window
+        if let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }) {
+            if let keyWindow = windowScene.keyWindow {
+                return keyWindow
+            }
+            if let window = windowScene.windows.first(where: { $0.isKeyWindow }) {
+                return window
+            }
+            if let anyWindow = windowScene.windows.first {
+                return anyWindow
+            }
+        }
+        return UIWindow()
+        #elseif canImport(AppKit)
+        // macOS: return the key window or a new window
+        return NSApplication.shared.keyWindow ?? NSWindow()
+        #else
+        return ASPresentationAnchor()
+        #endif
     }
 }
