@@ -31,28 +31,30 @@
 - [ ] **Epic summary:** End-to-end onboarding, Google auth, initial dataset discover/create, recovery.
   - **In-scope:** OAuth, folder/sheet setup, dataset pick/create, recovery/relink
   - **Dependencies:** Google APIs
-- [ ] **US-01.01:** As a new user, I can sign in with Google and grant Drive/Sheets access.
+- [x] **US-01.01:** As a new user, I can sign in with Google and grant Drive/Sheets access.
     - **Acceptance Criteria:**
-      - [ ] Google OAuth launches, requests correct scopes
-      - [ ] Success/failure is shown, errors handled
-      - [ ] Proceeds to next onboarding step on success
+      - [x] Google OAuth launches, requests correct scopes
+      - [x] Success/failure is shown, errors handled
+      - [x] Proceeds to next onboarding step on success
     - **Source:** ui-flow-spec.md 1.1, vision.md
     - **Tasks:**
-      - [ ] T-01.01.01 Implement Google OAuth screen
-      - [ ] T-01.01.02 Handle OAuth callback and error states
+      - [x] T-01.01.01 Implement Google OAuth screen
+      - [x] T-01.01.02 Handle OAuth callback and error states
   
-- [ ] **US-01.02:** As a user, I can select an existing dataset or create a new one on Drive
+- [x] **US-01.02:** As a user, I can select an existing dataset or create a new one on Drive
     - **Acceptance Criteria:**
-      - [ ] App auto-detects eligible folders/files
-      - [ ] User can view found dataset summary
-      - [ ] User can trigger new dataset creation
-      - [ ] Creation sets up correct Drive folders/sheet/tabs
+      - [x] App auto-detects eligible folders/files
+      - [x] User can view found dataset summary
+      - [x] User can trigger new dataset creation
+      - [x] Creation sets up correct Drive folders/sheet/tabs
     - **Source:** ui-flow-spec.md 1.2-1.3, google-drive-folder-architecture.md
+    - **Plan:** `.ai/thoughts/plans/2026-01-11-US-01-02-dataset-discovery.md`
+    - **Notes:** Current implementation simulates dataset discovery/creation locally. Drive/Sheets creation is planned with sync/cloud integration (see E-07).
     - **Tasks:**
-      - [ ] T-01.02.01 Auto-detect dataset/folder
-      - [ ] T-01.02.02 Show dataset summary/selection
-      - [ ] T-01.02.03 Create new dataset structure (folders, sheet, tabs)
-      - [ ] T-01.02.04 Seed default categories/settings
+      - [x] T-01.02.01 Auto-detect dataset/folder
+      - [x] T-01.02.02 Show dataset summary/selection
+      - [x] T-01.02.03 Create new dataset structure (folders, sheet, tabs)
+      - [x] T-01.02.04 Seed default categories/settings
 
 - [ ] **US-01.03:** As a user, I can recover or relink my dataset if needed
     - **Acceptance Criteria:**
@@ -271,5 +273,3 @@
 ---
 
 **End of backlog. Every epic/story/task references its source in ai/notes/ for traceability.**
-
-

@@ -16,4 +16,5 @@ enum OnboardingStep {
 
 final class AppState: ObservableObject {
     @Published var onboardingStep: OnboardingStep = .welcome
+    @Published var datasetSummary: DatasetSummary?
 }
