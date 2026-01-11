@@ -40,6 +40,7 @@
     - **Tasks:**
       - [x] T-01.01.01 Implement Google OAuth screen
       - [x] T-01.01.02 Handle OAuth callback and error states
+      - [ ] T-01.01.03 Complete "Learn More" button feature (link to docs, open in-app browser, handle failures)
   
 - [x] **US-01.02:** As a user, I can select an existing dataset or create a new one on Drive
     - **Acceptance Criteria:**
@@ -273,3 +274,4 @@
 ---
 
 **End of backlog. Every epic/story/task references its source in ai/notes/ for traceability.**
+
