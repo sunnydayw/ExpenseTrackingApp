@@ -38,12 +38,14 @@
   - `Data/` + spreadsheet
   - `Receipts/`
   - `Settings` tab in spreadsheet
+> Note: In the current implementation, dataset discovery uses locally stored metadata to simulate this detection until Drive API integration is added.
 
 **If found**
 - Show dataset summary:
   - Dataset name
   - Last modified time
 - CTA: `Use This Dataset`
+- If the user chooses `Create New Dataset Instead`, confirm that the existing local selection will be replaced.
 
 **If not found**
 - Show guidance and default to `Create New Dataset`
@@ -66,6 +68,7 @@
   - datasetId, schemaVersion, spreadsheetId, rootFolderId, receiptsFolderId
 - Seed default categories:
   - User can modify later
+> Note: In the current implementation, dataset creation is simulated locally and does not create Drive folders/sheets until Drive/Sheets integration is implemented.
 
 **Completion**
 - CTA: `Start Using App`
