@@ -21,6 +21,11 @@
 			path = ExpenseTrackingApp;
 			sourceTree = "<group>";
 		};
+		6566A4972F1356420039147E /* .ai */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .ai;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,7 @@
 		6566A4792F1351E30039147E = {
 			isa = PBXGroup;
 			children = (
+				6566A4972F1356420039147E /* .ai */,
 				6566A4842F1351E30039147E /* ExpenseTrackingApp */,
 				6566A4832F1351E30039147E /* Products */,
 			);
@@ -69,6 +75,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				6566A4842F1351E30039147E /* ExpenseTrackingApp */,
+				6566A4972F1356420039147E /* .ai */,
 			);
 			name = ExpenseTrackingApp;
 			packageProductDependencies = (
