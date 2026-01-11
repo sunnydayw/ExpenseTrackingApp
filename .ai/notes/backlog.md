@@ -31,15 +31,15 @@
 - [ ] **Epic summary:** End-to-end onboarding, Google auth, initial dataset discover/create, recovery.
   - **In-scope:** OAuth, folder/sheet setup, dataset pick/create, recovery/relink
   - **Dependencies:** Google APIs
-- [ ] **US-01.01:** As a new user, I can sign in with Google and grant Drive/Sheets access.
+- [x] **US-01.01:** As a new user, I can sign in with Google and grant Drive/Sheets access.
     - **Acceptance Criteria:**
-      - [ ] Google OAuth launches, requests correct scopes
-      - [ ] Success/failure is shown, errors handled
-      - [ ] Proceeds to next onboarding step on success
+      - [x] Google OAuth launches, requests correct scopes
+      - [x] Success/failure is shown, errors handled
+      - [ x Proceeds to next onboarding step on success
     - **Source:** ui-flow-spec.md 1.1, vision.md
     - **Tasks:**
-      - [ ] T-01.01.01 Implement Google OAuth screen
-      - [ ] T-01.01.02 Handle OAuth callback and error states
+      - [x] T-01.01.01 Implement Google OAuth screen
+      - [x] T-01.01.02 Handle OAuth callback and error states
   
 - [ ] **US-01.02:** As a user, I can select an existing dataset or create a new one on Drive
     - **Acceptance Criteria:**
