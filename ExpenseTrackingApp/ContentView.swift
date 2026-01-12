@@ -34,14 +34,15 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-#endif
+
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        isShowingSettings = true
-                    } label: {
-                        Label("Settings", systemImage: "gearshape")
-                    }
+                    settingsButton
                 }
+#else
+                ToolbarItem(placement: .primaryAction) {
+                    settingsButton
+                }
+#endif
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
@@ -54,6 +55,14 @@ struct ContentView: View {
         .sheet(isPresented: $isShowingSettings) {
             SettingsView()
                 .environmentObject(appState)
+        }
+    }
+
+    private var settingsButton: some View {
+        Button {
+            isShowingSettings = true
+        } label: {
+            Label("Settings", systemImage: "gearshape")
         }
     }
 
