@@ -9,8 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @EnvironmentObject private var appState: AppState
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @State private var isShowingSettings = false
 
     var body: some View {
         NavigationSplitView {
@@ -33,6 +35,13 @@ struct ContentView: View {
                     EditButton()
                 }
 #endif
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        isShowingSettings = true
+                    } label: {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
@@ -41,6 +50,10 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
+        }
+        .sheet(isPresented: $isShowingSettings) {
+            SettingsView()
+                .environmentObject(appState)
         }
     }
 
@@ -63,4 +76,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
+        .environmentObject(AppState())
 }

@@ -66,6 +66,12 @@ final class DatasetStore {
     func saveDefaultCategories(_ categories: [String]) {
         userDefaults.set(categories, forKey: categoriesKey)
     }
+
+    func clearDataset() {
+        userDefaults.removeObject(forKey: summaryKey)
+        userDefaults.removeObject(forKey: settingsKey)
+        userDefaults.removeObject(forKey: categoriesKey)
+    }
 }
 
 final class DatasetDiscoveryService {
