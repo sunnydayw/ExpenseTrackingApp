@@ -63,6 +63,7 @@
       - [ ] "Relink" lets user pick a different dataset
       - [ ] Error guidance is shown if recovery fails
     - **Source:** ui-flow-spec.md 1.4, product-plan.md
+    - **Plan:** `.ai/thoughts/plans/2026-01-11-US-01-03-dataset-recovery.md`
     - **Tasks:**
       - [ ] T-01.03.01 Implement "Sync Now" and progress
       - [ ] T-01.03.02 Implement "Relink Dataset"
@@ -274,4 +275,3 @@
 ---
 
 **End of backlog. Every epic/story/task references its source in ai/notes/ for traceability.**
-

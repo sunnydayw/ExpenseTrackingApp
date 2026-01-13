@@ -17,4 +17,14 @@ enum OnboardingStep {
 final class AppState: ObservableObject {
     @Published var onboardingStep: OnboardingStep = .welcome
     @Published var datasetSummary: DatasetSummary?
+
+    private let datasetStore: DatasetStore
+
+    init(datasetStore: DatasetStore = DatasetStore()) {
+        self.datasetStore = datasetStore
+        if let summary = datasetStore.loadSummary() {
+            datasetSummary = summary
+            onboardingStep = .completed
+        }
+    }
 }
